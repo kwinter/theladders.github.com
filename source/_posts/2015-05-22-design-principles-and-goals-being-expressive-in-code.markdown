@@ -5,7 +5,7 @@ title: "Design Principles and Goals (Part 3) - Being Expressive in Code"
 date: 2015-05-22 12:26
 comments: true
 categories: 
-published: false
+published: true
 ---
 
 {% blockquote -- Michael Feathers %}
@@ -171,7 +171,7 @@ Rather than passing around Collection<Model>, we frequently create meaningful cl
 
 If we take a look at an earlier example, we have a Users class that handles things like filtering and sorting:
 
-our Users class:
+some methods from our Users class:
 ```java
 public Users sorted(Comparator<User> comparator)
 {
@@ -218,4 +218,4 @@ Collections.sort(withoutCurrentUser, by(Name.lastThenFirst()));
 and who wants to read that??  By using first class collections, we can write more declarative high level code that almost reads like English.
 
 # In Closing
-Code that reads well and overall quality are things that we highly value.  We want our code to express itself to the next developer that has to come and make changes - and that’s at the heart of our principles: change.  If code never changed, we wouldn’t need any of these values.  But that’s the point of software - it’s soft.  We want to embrace change and make it easier, because that’s where the value really is.
+Code that reads well and overall quality are things that we highly value.  We want our code to express itself to the next developer that has to come and make changes - and that’s at the heart of our principles: change.  If code never changed, we wouldn’t need any of these values.  But that’s the point of software - it’s soft. And that's what this series is really about - high level architecture, OO principles, expressive code - all working together to embrace change and make it easier, because that’s where the value really is.
