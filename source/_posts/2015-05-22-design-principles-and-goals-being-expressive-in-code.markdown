@@ -51,17 +51,17 @@ public Iterable<JobRepresentation> getAppliedJobsFor(final Jobseeker jobseeker)
 {
   Iterable<ProcessedApplication> applications = jobApplicationSystem.getApplicationsFor(jobseeker);
 
-// Filter to only include succeeded applications
-Iterable<ProcessedApplication> succeededApplications = Iterables.filter(applications, new Predicate<ProcessedApplication>()
-{
+  // Filter to only include succeeded applications
+  Iterable<ProcessedApplication> succeededApplications = Iterables.filter(applications, new Predicate<ProcessedApplication>()
+  {
 	@Override
 	public boolean apply(@Nullable ProcessedApplication application)
 	{
       return application.succeeded();
 	}
-});
+  });
 	
-return Iterables.transform(succeededApplications, new Function<ProcessedApplication, JobRepresentation>()
+  return Iterables.transform(succeededApplications, new Function<ProcessedApplication, JobRepresentation>()
 	{
   	@Override
   	public JobRepresentation apply(@Nullable ProcessedApplication application)
@@ -85,7 +85,7 @@ public Iterable<JobRepresentation> getAppliedJobsFor(Jobseeker jobseeker)
 {
    ProcessedApplications applications = jobApplicationSystem.getApplicationsFor(jobseeker);
    return applications.thatAreSuccessful().transformed(toJobs()).toRepresentationsFor(jobseeker);
- }
+}
  
 private Function<ProcessedApplications, Jobs> toJobs()
 {
