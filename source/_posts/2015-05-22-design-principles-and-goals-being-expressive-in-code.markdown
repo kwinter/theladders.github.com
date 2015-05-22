@@ -218,4 +218,4 @@ Collections.sort(withoutCurrentUser, by(Name.lastThenFirst()));
 and who wants to read that??  By using first class collections, we can write more declarative high level code that almost reads like English.
 
 # In Closing
-Code that reads well and overall quality is something that we highly value.  We want our code to express itself to the next developer that has to come and make changes - and that’s at the heart of our principles: change.  If code never changed, we wouldn’t need any of these values.  But that’s the point of software - it’s soft.  We want to embrace change and make it easier, because that’s where the value really is.
+Code that reads well and overall quality are things that we highly value.  We want our code to express itself to the next developer that has to come and make changes - and that’s at the heart of our principles: change.  If code never changed, we wouldn’t need any of these values.  But that’s the point of software - it’s soft.  We want to embrace change and make it easier, because that’s where the value really is.
