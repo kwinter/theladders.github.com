@@ -45,6 +45,7 @@ jobseeker.print(paymentHistory.includingOnly(selectedPaymentIds)).to(outputStrea
 There are a lot of times we have to do things that are “mechanical” that don’t really have any inherent meaning to the task at hand, but are really just supporting code.  Things like constructing specific Date instances, interfacing with other library/framework components, or looping over collections.  This supporting code serves a purpose, but lacing it within the more expressive code of business logic only serves as clutter.  Separating mechanical code from business code leaves the important code cleaner and simpler, highlighting what’s really happening.
  
 A real world example for retrieving the jobs that a Jobseeker has applied to:
+
 Old Code:
 ```java
 public Iterable<JobRepresentation> getAppliedJobsFor(final Jobseeker jobseeker)
@@ -135,10 +136,10 @@ private Receipt makePayment(ProductOption productOption,
 ```
  
 After some refactoring to allow the models to complete the work on their own, we were still left with a question – what does the interaction look like?
-
+```java
 productOption.upgradeToWith(jobseeker, creditCard);  // ?
 productOption.upgradeFor(jobseeker).payingWith(creditCard); // ?
-
+```
 Taking a step back, the important question is – how would we have a conversation about this?  How would a Product Manager explain this use case?  They would probably say “the Jobseeker is upgrading to the selected product option, and paying by credit card.”  So that’s what the code looks like – a sentence (or close to it) that says just that.  So in the end, the application code looks like:
  
 UpgradeWorkflow (Use Case):
