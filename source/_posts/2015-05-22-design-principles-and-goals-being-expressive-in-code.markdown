@@ -5,7 +5,7 @@ title: "Design Principles and Goals (Part 3) - Being Expressive in Code"
 date: 2015-05-22 12:26
 comments: true
 categories: 
-published: false
+published: true
 ---
 
 {% blockquote -- Michael Feathers %}
