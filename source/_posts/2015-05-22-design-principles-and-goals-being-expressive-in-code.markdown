@@ -171,7 +171,7 @@ Rather than passing around Collection<Model>, we frequently create meaningful cl
 
 If we take a look at an earlier example, we have a Users class that handles things like filtering and sorting:
 
-our Users class:
+some methods from our Users class:
 ```java
 public Users sorted(Comparator<User> comparator)
 {
